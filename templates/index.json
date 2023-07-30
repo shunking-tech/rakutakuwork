@@ -1,0 +1,329 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "在宅ワークをラクにしよう",
+            "heading_size": "h1"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "全ての商品を見る",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "small",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>全ての在宅ワーカーへ<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>デスク周りの環境は作業効率に大きな影響を与えます。自宅で仕事をするようになったのなら、自宅のデスク環境を整えましょう。それは大きな自己投資となるはずです。<\/p>"
+          }
+        },
+        "3b22aa33-312e-4c71-8a49-b7ced87b17c3": {
+          "type": "button",
+          "settings": {
+            "button_label": "▶︎ About Us",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "3b22aa33-312e-4c71-8a49-b7ced87b17c3"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "1664865285d54c8a5d": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "[まずはこれ！]お手軽アイテム",
+        "heading_size": "h2",
+        "description": "<p>置くだけ・付けるだけで簡単に肩こり腰痛を軽減できるアイテムです。<\/p><p>デスクやチェアと比べて安く済むので、まずはこちらをお試しください！<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "お手軽アイテム",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16630479458d2e7cb3": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "パソコンスタンド",
+        "heading_size": "h2",
+        "description": "<p>ノートPCの高さや角度が変わることで画面を見る視線が上がり、姿勢改善になります。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "パソコンスタンド",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "アームレスト",
+        "heading_size": "h2",
+        "description": "<p>腕を置けるようにすることで、肩への負担を軽くします。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "armrest",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "16630384249c238b6d": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "リストレスト",
+        "heading_size": "h2",
+        "description": "<p>手首を置けるようにすることで、手首を楽な角度でキープします。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "リストレスト",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663043887a18b8a1e": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "フットレスト",
+        "heading_size": "h2",
+        "description": "<p>長時間座る時、足のだるさや疲労感を軽減したり、安定した姿勢をキープして腰への負担を和らげてくれます。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "footrest",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166312981679496f30": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "オフィスデスク",
+        "heading_size": "h2",
+        "description": "<p>毎日向かうデスクは妥協しない。良いデスクで毎日のモチベーションと作業効率を上げましょう。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "オフィスデスク",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166314222289db9c5e": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "オフィスチェア",
+        "heading_size": "h2",
+        "description": "<p>長時間のデスクワークをしても、腰痛を防いで、疲れにくいオフィスチェアをご用意しております。<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "office-chair",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663219505c08d7930": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "16632181549279a806": {
+      "type": "apps",
+      "blocks": {
+        "2b6c7901-410d-49ee-95a1-e5348c771c8a": {
+          "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "2b6c7901-410d-49ee-95a1-e5348c771c8a"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "166450617465f8ae17": {
+      "type": "original-section-line-float",
+      "settings": {
+        "float_line_img": "shopify:\/\/shop_images\/LINE.jpg",
+        "float_line_imgSP": "shopify:\/\/shop_images\/LINE.jpg",
+        "line_link": "https:\/\/lin.ee\/GicYmlr",
+        "float_line_widthpc": 20,
+        "float_line_widthsp": 60
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "rich_text",
+    "1664865285d54c8a5d",
+    "16630479458d2e7cb3",
+    "featured_collection",
+    "16630384249c238b6d",
+    "1663043887a18b8a1e",
+    "166312981679496f30",
+    "166314222289db9c5e",
+    "1663219505c08d7930",
+    "16632181549279a806",
+    "166450617465f8ae17"
+  ]
+}

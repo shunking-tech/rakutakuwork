@@ -1,0 +1,106 @@
+.text-body {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+  font-weight: 500;
+}
+
+h4,
+.h4 {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+}
+
+.link,
+.customer a {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+}
+
+.select__select {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+  font-weight: 400;
+}
+
+.text-area {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+  font-weight: 400;
+}
+
+.text-body {
+  font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+  font-style: nomal;
+  font-weight: 400;
+}
+
+.h0 {
+  font-size: 36px;
+}
+
+@media only screen and (min-width: 750px) {
+  .h0 {
+    font-size: 54px;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 24px;
+}
+
+@media only screen and (min-width: 750px) {
+  h1,
+  .h1 {
+    font-size: 36px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 24px;
+}
+
+@media only screen and (min-width: 750px) {
+  h2,
+  .h2 {
+    font-size: 24px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 750px) {
+  h3,
+  .h3 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+
+
+
+

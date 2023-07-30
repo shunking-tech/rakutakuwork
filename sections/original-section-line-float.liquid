@@ -1,0 +1,98 @@
+<style>
+.line-float {
+    width: {{ section.settings.float_line_widthpc }}rem;
+    left: 0;
+    bottom: 4rem;
+    z-index: 100;
+    position: fixed;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+    .line-float img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .line-float:hover {
+    opacity: 0.8;
+  }
+  
+  .line-float.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  
+
+  
+  @media only screen and (max-width: 749px) {
+    .line-float {
+      width: {{ section.settings.float_line_widthsp }}vw;
+      left: 5vw;
+      bottom: 20px;
+    }
+  }
+</style>
+
+<div class="line-float">
+  <a href="{{ section.settings.line_link }}" target="_blank">
+    <img class="small-hide" src="{{ section.settings.float_line_img | img_url: 'master'  }}" alt="" loading="lazy">
+    <img class="large-up-hide medium-hide" src="{{ section.settings.float_line_imgSP | img_url: 'master'  }}" alt="" loading="lazy">
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "LINEフロートボタン",
+   "settings": [
+        {
+             "type": "image_picker",
+             "id": "float_line_img",
+             "label": "画像 PC"
+         },
+        {
+             "type": "image_picker",
+             "id": "float_line_imgSP",
+             "label": "画像 Mobile"
+         },
+         {
+              "id": "line_link",
+              "type": "url",
+              "label": "リンク先"
+         },
+        {
+          "type": "range",
+          "id": "float_line_widthpc",
+          "min": 5,
+          "max": 20,
+          "step": 1,
+          "default": 7,
+          "label": "バナー横幅PC"
+        },
+        {
+          "type": "range",
+          "id": "float_line_widthsp",
+          "min": 10,
+          "max": 100,
+          "step": 10,
+          "default": 60,
+          "label": "バナー横幅SP"
+        }
+    ],
+ "presets": [
+    {
+      "name": "LINEフロートボタン"
+    }
+  ]
+}
+{% endschema %}
+
+<script type="text/javascript">
+  window.addEventListener('scroll', function(){
+     var scroll = document.querySelector('.line-float');
+    scroll.classList.toggle("active", window.scrollY > 100);
+  });
+  
+  
+</script>

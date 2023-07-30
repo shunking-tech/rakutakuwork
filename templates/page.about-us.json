@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "1664590463a58871c6": {
+      "type": "rich-text",
+      "blocks": {
+        "1664590463ed8c0138-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>About Us<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "1664590463ed8c0138-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ラクタクワークは、自宅のワークスーペースを快適にするために誕生したオフィス用品ショップです。<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1664590463ed8c0138-0",
+        "1664590463ed8c0138-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1664590468d6d8d273": {
+      "type": "image-with-text",
+      "blocks": {
+        "166459046817791d86-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "自宅での仕事は集中できてますか？",
+            "heading_size": "h1"
+          }
+        },
+        "166459046817791d86-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>テレワークが導入されて、自宅で仕事をする時間が増えた方も多いと思います。<\/p><p>私自身も、オフィスで仕事する時と比べて集中できない・疲労が溜まりやすい、という悩みを持っていました。<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "166459046817791d86-0",
+        "166459046817791d86-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1664590476701a4a9a": {
+      "type": "image-with-text",
+      "blocks": {
+        "16645904760f0ec2d6-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "デスク周りの環境を整えよう",
+            "heading_size": "h1"
+          }
+        },
+        "16645904760f0ec2d6-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>正しい姿勢で座ることができていないと、肩こり・腰痛がひどくなってしまいます。<\/p><p>疲労が溜まりやすく集中力が出なくて、仕事の効率が落ちている、という方には、当ショップの商品が役に立つでしょう。<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16645904760f0ec2d6-0",
+        "16645904760f0ec2d6-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166459049210da7d16": {
+      "type": "image-with-text",
+      "blocks": {
+        "16645904923f4cd9e2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "良い商品をお手頃価格で",
+            "heading_size": "h1"
+          }
+        },
+        "16645904923f4cd9e2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>オフィス用品は金額が高いものも多いです。それで買い物に失敗するのはあまりにも痛手です。<\/p><p>当ショップでは、デスクワークの疲労を軽減するための商品を、低価格で揃えています。<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16645904923f4cd9e2-0",
+        "16645904923f4cd9e2-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1664590463a58871c6",
+    "1664590468d6d8d273",
+    "1664590476701a4a9a",
+    "166459049210da7d16"
+  ]
+}

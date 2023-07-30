@@ -1,0 +1,7 @@
+.product-form__input.colorswatch input[type=radio]+label {
+  width: 4rem;
+  height: 4rem;
+}
+.product-form__input.colorswatch input[type=radio]:checked+label {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #333;
+}
