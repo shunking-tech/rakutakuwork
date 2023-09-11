@@ -13,8 +13,11 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@shopify/shopify-api": "^7.5.2",
+    "axios": "^1.4.0",
     "firebase-admin": "^11.8.0",
-    "firebase-functions": "^4.3.1"
+    "firebase-functions": "^4.3.1",
+    "shopify-api-node": "^3.12.6"
   },
   "devDependencies": {
     "firebase-functions-test": "^3.1.0"
