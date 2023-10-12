@@ -87,7 +87,6 @@
   </script>  
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'favorite.js' | asset_url }}" defer="defer"></script>
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
   {%- if first_3d_model -%}
@@ -287,6 +286,8 @@
                 </h2>
               </a>
             </div>
+          {%- when 'favorite_btn' -%}
+            {% render 'favorite-btn', product: product %}
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -868,6 +869,11 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "favorite_btn",
+      "name": "お気に入りボタン",
       "limit": 1
     },
     {
