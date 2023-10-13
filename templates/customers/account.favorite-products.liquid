@@ -1,0 +1,13 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="favorite-products page-width">
+  <h1 class="h2">お気に入り商品</h1>
+  <ul class="grid grid--2-col grid--4-col-desktop">
+    {% for product in customer.metafields.favorite.products.value %}
+      <li class="grid__item">
+        {% render 'card-product', card_product: product %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
