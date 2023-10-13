@@ -59,7 +59,8 @@
       httpRequest.open(
         'POST',
         // `https://updateFavoriteProduct-tzvzaaarsq-uc.a.run.app`,
-        `http://127.0.0.1:5001/rakutakuwork-cloud/us-central1/updateFavoriteProduct`,
+        `https://us-central1-rakutakuwork-cloud.cloudfunctions.net/updateFavoriteProduct`,
+        // `http://127.0.0.1:5001/rakutakuwork-cloud/us-central1/updateFavoriteProduct`,
         true
       );
       httpRequest.setRequestHeader( 'Content-Type', 'application/json' );
@@ -67,8 +68,10 @@
         console.log(`レスポンス：${httpRequest.response}`)
       }
       httpRequest.send(JSON.stringify({
-        product_id: product_id,
-        customer_id: customer_id,
+        data: {
+          product_id: product_id,
+          customer_id: customer_id,
+        }
       }));
       httpRequest.onreadystatechange = this.alertContents;
     }

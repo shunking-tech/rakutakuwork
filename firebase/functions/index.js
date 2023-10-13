@@ -7,7 +7,7 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-const {onRequest} = require("firebase-functions/v2/https");
+const {onCall} = require("firebase-functions/v1/https");
 const logger = require("firebase-functions/logger");
 const Shopify = require('shopify-api-node');
 const axios = require('axios');
@@ -17,19 +17,19 @@ const SHOP_URL = 'rakutakuwork.myshopify.com';
 const API_KEY = process.env.SHOPIFY_API_KEY;
 const API_PASSWORD = process.env.SHOPIFY_API_PASS;
 
-exports.updateFavoriteProduct = onRequest(async (req, res) => {
+exports.updateFavoriteProduct = onCall(async (data, context) => {
   console.log("お気に入り追加!!!!");
-  console.log(req.body);
+  console.log(data);
 
-  const product_id = req.body.product_id;
-  const customer_id = req.body.customer_id;
+  const product_id = data.product_id;
+  const customer_id = data.customer_id;
   const favorite_namespace = "favorite";
   const product_favorite_count_metafield_key = 'count';
   const customer_favorite_products_metafield_key = 'products';
   // Shopify接続設定
   const shopify = new Shopify({ shopName: SHOP_URL, apiKey: API_KEY, password: API_PASSWORD });
 
-  console.log(`customer_id: ${req.body.customer_id}`)
+  console.log(`customer_id: ${data.customer_id}`)
 
   try {
     // 顧客メタフィールドを取得
@@ -115,6 +115,6 @@ exports.updateFavoriteProduct = onRequest(async (req, res) => {
     }
   } catch (error) {
     console.error('エラーが発生しました:', error);
-    res.status(500).send('Internal Server Error');
+    throw new functions.https.HttpsError('invalid-argument', error.message);
   }
 });
