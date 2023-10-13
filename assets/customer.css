@@ -450,9 +450,10 @@
   }
 }
 
-.account h1 + a {
+.account h1 ~ a {
   display: inline-flex;
   align-items: center;
+  margin-right: 3rem;
 }
 
 .account a svg {
