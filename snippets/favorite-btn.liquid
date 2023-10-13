@@ -26,67 +26,67 @@
   <favorite-btn class="{% if is_added_favorite %}added-favorite{% endif %}">
     {% render 'icon_heart', class: "" %}
   </favorite-btn>
-{% endif %}
 
-<script>
-  class FavoriteBtn extends HTMLElement {
-    constructor() {
-      super();
-      this._isAdded = {{ is_added_favorite }};
+  <script>
+    class FavoriteBtn extends HTMLElement {
+      constructor() {
+        super();
+        this._isAdded = {{ is_added_favorite }};
 
-      this.addEventListener('click', () => {
-        this.updateFavoriteProduct();
-        this._isAdded = !this._isAdded;
-        if (this._isAdded) {
-          this.classList.add('added-favorite');
-        } else {
-          this.classList.remove('added-favorite');
+        this.addEventListener('click', () => {
+          this.updateFavoriteProduct();
+          this._isAdded = !this._isAdded;
+          if (this._isAdded) {
+            this.classList.add('added-favorite');
+          } else {
+            this.classList.remove('added-favorite');
+          }
+        });
+      }
+
+      updateFavoriteProduct() {
+        let product_id = {{ product.id }}; // 商品ID取得
+        let customer_id = {{ customer.id }}; // 顧客ID取得
+
+        var httpRequest = new XMLHttpRequest();
+        
+        if (!httpRequest) {
+          alert('中断 :( XMLHTTP インスタンスを生成できませんでした');
+          return false;
         }
-      });
-    }
-
-    updateFavoriteProduct() {
-      let product_id = {{ product.id }}; // 商品ID取得
-      let customer_id = {{ customer.id }}; // 顧客ID取得
-
-      var httpRequest = new XMLHttpRequest();
-      
-      if (!httpRequest) {
-        alert('中断 :( XMLHTTP インスタンスを生成できませんでした');
-        return false;
+        
+        httpRequest.open(
+          'POST',
+          // `https://updateFavoriteProduct-tzvzaaarsq-uc.a.run.app`,
+          `https://us-central1-rakutakuwork-cloud.cloudfunctions.net/updateFavoriteProduct`,
+          // `http://127.0.0.1:5001/rakutakuwork-cloud/us-central1/updateFavoriteProduct`,
+          true
+        );
+        httpRequest.setRequestHeader( 'Content-Type', 'application/json' );
+        httpRequest.onload = () => {
+          console.log(`レスポンス：${httpRequest.response}`)
+        }
+        httpRequest.send(JSON.stringify({
+          data: {
+            product_id: product_id,
+            customer_id: customer_id,
+          }
+        }));
+        httpRequest.onreadystatechange = this.alertContents;
       }
       
-      httpRequest.open(
-        'POST',
-        // `https://updateFavoriteProduct-tzvzaaarsq-uc.a.run.app`,
-        `https://us-central1-rakutakuwork-cloud.cloudfunctions.net/updateFavoriteProduct`,
-        // `http://127.0.0.1:5001/rakutakuwork-cloud/us-central1/updateFavoriteProduct`,
-        true
-      );
-      httpRequest.setRequestHeader( 'Content-Type', 'application/json' );
-      httpRequest.onload = () => {
-        console.log(`レスポンス：${httpRequest.response}`)
-      }
-      httpRequest.send(JSON.stringify({
-        data: {
-          product_id: product_id,
-          customer_id: customer_id,
-        }
-      }));
-      httpRequest.onreadystatechange = this.alertContents;
-    }
-    
-    alertContents() {
-      if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        if (httpRequest.status === 200) {
-          console.log("リクエスト成功");
-        } else {
-          console.log('リクエストエラー')
-          console.log(httpRequest.response);
-          alert('リクエストに問題が発生しました');
+      alertContents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          if (httpRequest.status === 200) {
+            console.log("リクエスト成功");
+          } else {
+            console.log('リクエストエラー')
+            console.log(httpRequest.response);
+            alert('リクエストに問題が発生しました');
+          }
         }
       }
     }
-  }
-  customElements.define("favorite-btn", FavoriteBtn);
+    customElements.define("favorite-btn", FavoriteBtn);
 </script>
+{% endif %}
