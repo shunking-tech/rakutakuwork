@@ -20,7 +20,6 @@ const API_PASSWORD = process.env.SHOPIFY_API_PASS;
 exports.updateFavoriteProduct = onRequest(async (req, res) => {
   console.log("お気に入り追加!!!!");
   console.log(req.body);
-  // res.send("お気に入り追加!!");
 
   const product_id = req.body.product_id;
   const customer_id = req.body.customer_id;
@@ -118,7 +117,4 @@ exports.updateFavoriteProduct = onRequest(async (req, res) => {
     console.error('エラーが発生しました:', error);
     res.status(500).send('Internal Server Error');
   }
-});
-
-exports.getShopifyProducts = onRequest(async (req, res) => {  
 });
