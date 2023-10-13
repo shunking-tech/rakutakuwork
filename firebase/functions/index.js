@@ -17,7 +17,7 @@ const SHOP_URL = 'rakutakuwork.myshopify.com';
 const API_KEY = process.env.SHOPIFY_API_KEY;
 const API_PASSWORD = process.env.SHOPIFY_API_PASS;
 
-exports.addFavoriteProduct = onRequest(async (req, res) => {
+exports.updateFavoriteProduct = onRequest(async (req, res) => {
   console.log("お気に入り追加!!!!");
   console.log(req.body);
   // res.send("お気に入り追加!!");
