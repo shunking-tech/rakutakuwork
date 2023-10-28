@@ -17,6 +17,7 @@ const SHOP_URL = 'rakutakuwork.myshopify.com';
 const API_KEY = process.env.SHOPIFY_API_KEY;
 const API_PASSWORD = process.env.SHOPIFY_API_PASS;
 
+// お気に入り更新処理
 exports.updateFavoriteProduct = onCall(async (data, context) => {
   console.log("お気に入り更新!!!!");
   console.log(data);
