@@ -18,7 +18,7 @@ const API_KEY = process.env.SHOPIFY_API_KEY;
 const API_PASSWORD = process.env.SHOPIFY_API_PASS;
 
 exports.updateFavoriteProduct = onCall(async (data, context) => {
-  console.log("お気に入り追加!!!!");
+  console.log("お気に入り更新!!!!");
   console.log(data);
 
   const product_id = data.product_id;
