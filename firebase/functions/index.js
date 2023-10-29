@@ -119,3 +119,66 @@ exports.updateFavoriteProduct = onCall(async (data, context) => {
     throw new functions.https.HttpsError('invalid-argument', error.message);
   }
 });
+
+// プロフィール画像設定処理
+exports.updateProfile = onCall(async (data, context) => {
+  console.log("プロフィール更新!!!!");
+  console.log(data)
+
+  const customer_id = data.customer_id;
+  // Shopify接続設定
+  const shopify = new Shopify({ shopName: SHOP_URL, apiKey: API_KEY, password: API_PASSWORD });
+
+  try {
+    // 顧客の基本情報を更新
+    await shopify.customer.update(customer_id, {
+      last_name: data.last_name,
+      first_name: data.first_name,
+      email: data.email,
+      phone: data.phone
+    })
+    
+    // 顧客のメタフィールド一覧を取得
+    const customer_metafields_response = await axios.get(`https://${API_KEY}:${API_PASSWORD}@${SHOP_URL}/admin/api/2023-07/customers/${customer_id}/metafields.json`);
+    let customer_metafields = customer_metafields_response.data.metafields
+
+    // 顧客のフリガナのメタフィールドを取得
+    let metafield_last_name_kana = customer_metafields.find(mf => mf.key === "last_name_kana");
+    let metafield_first_name_kana = customer_metafields.find(mf => mf.key === "first_name_kana");
+
+    // 顧客のフリガナのメタフィールドを更新
+    if (metafield_last_name_kana) { // メタフィールド「姓(フリガナ)」が存在する時
+      metafield_last_name_kana.value = data.last_name_kana;
+      await shopify.metafield.update(metafield_last_name_kana.id, {
+        ...metafield_last_name_kana
+      });
+    } else { // メタフィールド「姓(フリガナ)」が空欄の時
+      await shopify.metafield.create({
+        key: 'last_name_kana',
+        value: data.last_name_kana,
+        type: 'single_line_text_field',
+        namespace: "profile",
+        owner_resource: 'customer',
+        owner_id: customer_id
+      });
+    }
+    if (metafield_first_name_kana) { // メタフィールド「名(フリガナ)」が存在する時
+      metafield_first_name_kana.value = data.first_name_kana;
+      await shopify.metafield.update(metafield_first_name_kana.id, {
+        ...metafield_first_name_kana
+      });
+    } else { // メタフィールド「名(フリガナ)」が空欄の時
+      await shopify.metafield.create({
+        key: 'first_name_kana',
+        value: data.first_name_kana,
+        type: 'single_line_text_field',
+        namespace: 'profile',
+        owner_resource: 'customer',
+        owner_id: customer_id
+      });
+    }
+  } catch (error) {
+    console.error('エラーが発生しました:', error);
+    throw new functions.https.HttpsError('invalid-argument', error.message);
+  }
+});
