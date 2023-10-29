@@ -15,7 +15,7 @@
     </a>
   </div>
 
-  <div>
+  <div style="margin-top: 0;">
     <div>
       <h2>{{ 'customer.orders.title' | t }}</h2>
 
@@ -109,14 +109,23 @@
     </div>
 
     <div>
-      <h2>{{ 'customer.account.details' | t }}</h2>
-
+      <h2>デフォルトのお届け先</h2>
       {{ customer.default_address | format_address }}
-
       <a href="{{ routes.account_addresses_url }}">
         {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
       </a>
-      <br>
+      
+      <h2>{{ 'customer.account.details' | t }}</h2>
+      <p>
+        {{ customer.last_name }} {{ customer.first_name }}
+        {% if customer.metafields.profile.last_name_kana != blank and customer.metafields.profile.first_name_kana != blank %}
+          ({{ customer.metafields.profile.last_name_kana }} {{ customer.metafields.profile.first_name_kana }})
+        {% endif %}
+        <br>{{ customer.email }}
+        {% if customer.phone %}
+          <br>{{ customer.phone }}
+        {% endif %}
+      </p>
       <a href="/account?view=edit-profile">プロフィール変更</a>
     </div>
 
