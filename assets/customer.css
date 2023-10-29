@@ -431,7 +431,7 @@
 }
 
 :is(.account, .order) p {
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   font-size: 1.6rem;
 }
 
@@ -444,15 +444,10 @@
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 990px) {
-  :is(.account, .order) h2 {
-    margin-top: 0;
-  }
-}
-
-.account h1 + a {
+.account h1 ~ a {
   display: inline-flex;
   align-items: center;
+  margin-right: 3rem;
 }
 
 .account a svg {

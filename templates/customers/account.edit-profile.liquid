@@ -1,0 +1,88 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<div class="customer page-width">
+  <h1>プロフィール変更</h1>
+
+  <edit-profile>
+    <form>
+      <div class="field">
+        <input type="text" id="ProfileLastName" name="profile[last_name]" value="{{ customer.last_name }}" autocomplete="family-name" placeholder="姓">
+        <label for="ProfileLastName">姓</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ProfileFirstName" name="profile[first_name]" value="{{ customer.first_name }}" autocomplete="given-name" placeholder="名">
+        <label for="ProfileFirstName">名</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ProfileLastNameKana" name="profile[last_name_kana]" value="{{ customer.metafields.profile.last_name_kana }}" autocomplete="family-name" placeholder="姓">
+        <label for="ProfileLastNameKana">姓(フリガナ)</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ProfileFirstNameKana" name="profile[first_name_kana]" value="{{ customer.metafields.profile.first_name_kana }}" autocomplete="given-name" placeholder="名">
+        <label for="ProfileFirstNameKana">名(フリガナ)</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ProfileEmail" name="profile[email]" value="{{ customer.email }}" autocomplete="given-name" placeholder="名">
+        <label for="ProfileEmail">メールアドレス</label>
+      </div>
+      <div class="field">
+        <input type="text" id="ProfilePhone" name="profile[phone]" value="{{ customer.phone }}" autocomplete="given-name" placeholder="名">
+        <label for="ProfilePhone">電話番号</label>
+      </div>
+    </form>
+    <button id="profile-submit">プロフィールを更新する</button>
+  </edit-profile>
+</div>
+
+<script>
+  class EditProfile extends HTMLElement {
+    constructor() {
+      super();
+      this.querySelector('#profile-submit').addEventListener('click', () => {
+        console.log('更新！！')
+        this._last_name = this.querySelector('#ProfileLastName').value
+        this._firstN_name = this.querySelector('#ProfileFirstName').value
+        this._email = this.querySelector('#ProfileEmail').value
+        this._phone = this.querySelector('#ProfilePhone').value
+        this._last_name_kana = this.querySelector('#ProfileLastNameKana').value
+        this._first_name_kana = this.querySelector('#ProfileFirstNameKana').value
+        this.updateProfile();
+      })
+    }
+
+    updateProfile() {
+      let customer_id = {{ customer.id }}; // 顧客ID取得
+
+      var httpRequest = new XMLHttpRequest();
+      
+      if (!httpRequest) {
+        alert('中断 :( XMLHTTP インスタンスを生成できませんでした');
+        return false;
+      }
+      
+      httpRequest.open(
+        'POST',
+        `https://us-central1-rakutakuwork-cloud.cloudfunctions.net/updateProfile`,
+        // `http://127.0.0.1:5001/rakutakuwork-cloud/us-central1/updateProfile`,
+        true
+      );
+      httpRequest.setRequestHeader( 'Content-Type', 'application/json' );
+      httpRequest.onload = () => {
+        console.log(`レスポンス：${httpRequest.response}`)
+        location.href = "{{ routes.account_url }}"
+      }
+      httpRequest.send(JSON.stringify({
+        data: {
+          customer_id: customer_id,
+          last_name: this._last_name,
+          first_name: this._firstN_name,
+          email: this._email,
+          phone: this._phone,
+          last_name_kana: this._last_name_kana,
+          first_name_kana: this._first_name_kana,
+        }
+      }));
+    }
+  }
+  customElements.define("edit-profile", EditProfile);
+</script>

@@ -22,6 +22,11 @@
             "text_style": "subtitle"
           }
         },
+        "favorite_btn": {
+          "type": "favorite_btn",
+          "settings": {
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -60,6 +65,7 @@
         "vendor",
         "title",
         "caption",
+        "favorite_btn",
         "price",
         "variant_picker",
         "quantity_selector",
