@@ -120,7 +120,7 @@ exports.updateFavoriteProduct = onCall(async (data, context) => {
   }
 });
 
-// プロフィール画像設定処理
+// プロフィール更新処理
 exports.updateProfile = onCall(async (data, context) => {
   console.log("プロフィール更新!!!!");
   console.log(data)
